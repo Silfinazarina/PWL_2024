@@ -101,3 +101,20 @@ Route::get('/articles/{id}', [ArticlesController::class,'articles']);
 
 //RESOURCE CONTROLLER
 Route::resource('photos', PhotoController::class);
+
+
+//VIEW
+//MEMBUAT VIEW
+// Route::get('/greeting', function(){
+//     return view('hello', ['name'=>'Silfi Nazarina']);
+// });
+
+//VIEW DALAM DIREKTORI
+//Perubahan route 
+Route::get('/greeting', function(){
+    return view('blog.hello', ['name'=>'Silfi Nazarina']);
+});
+
+//MENAMPILKAN VIEW DARI CONTROLLER
+//mengubah route greeting
+Route::get('/greeting', [WelcomeController::class,'greeting']);
