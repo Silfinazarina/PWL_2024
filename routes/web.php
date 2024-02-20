@@ -6,6 +6,8 @@ use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ArticlesController;
+use App\Http\Controllers\PhotoController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -82,6 +84,8 @@ Route::get('/user/profile', function(){
 
 
 //CONTROLLER
+
+//CREATE CONTROLLER
 //langkah 1
 Route::get('/hello', [WelcomeController::class,'hello']);
 
@@ -94,3 +98,6 @@ Route::get('/hello', [WelcomeController::class,'hello']);
 Route::get('/', [HomeController::class,'index']);
 Route::get('/about', [AboutController::class,'about']);
 Route::get('/articles/{id}', [ArticlesController::class,'articles']);
+
+//RESOURCE CONTROLLER
+Route::resource('photos', PhotoController::class);
